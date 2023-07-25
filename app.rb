@@ -17,38 +17,6 @@ get("/") do
   erb(:rules)
 end
 
-=begin
-get("/rock") do
-  @player_rbs = "rock"
-
-  @computer_rbs = rbs.sample
-
-  @rbs_outcome = rbs_game(@player_rbs, @computer_rbs)
-
-  erb(:rock)
-end
-
-get("/paper") do
-  @player_rbs = "paper"
-
-  @computer_rbs = rbs.sample
-
-  @rbs_outcome = rbs_game(@player_rbs, @computer_rbs)
-
-  erb(:paper)
-end
-
-get("/scissors") do
-  @player_rbs = request.path_info.gsub("/","")
-
-  @computer_rbs = rbs.sample
-
-  @rbs_outcome = rbs_game(@player_rbs, @computer_rbs)
-
-  erb(:scissors)
-end
-=end
-
 rbs.each do |hand|
   get("/#{hand}") do
     @computer_rbs = rbs.sample
